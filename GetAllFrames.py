@@ -4,7 +4,7 @@ import os
 # Opens the built-in camera of laptop to capture video.
 cap = cv.VideoCapture(0)
 path = '/Users/admin/Documents/GitHub/Extracting-and-Saving-Video-Frames/Output'
-i = 0
+count = 0
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -15,8 +15,8 @@ while cap.isOpened():
         break
 
     # Save Frame by Frame into disk using iwrite method
-    cv.imwrite(os.path.join(path, 'frame%d.png' % i), frame)
-    i += 1
+    cv.imwrite(os.path.join(path, 'frame%d.png' % count), frame)
+    count += 1
 
 cap.release()
 cv.destroyAllWindows()
